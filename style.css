@@ -1,11 +1,22 @@
-    body {
+body {
     font-size: 15pt;
     margin: 0;
     padding: 0;
     background-color: #000000;
     box-sizing: border-box;
+    /* إخفاء شريط التمرير الأفقي والرأسي للصفحة */
+    overflow: hidden; /* يمنع ظهور أشرطة التمرير */
+    /* إخفاء شريط التمرير للمتصفحات المستندة على WebKit (مثل Chrome, Safari) */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
- .container{
+
+/* إخفاء شريط التمرير للمتصفحات المستندة على WebKit (مثل Chrome, Safari) */
+body::-webkit-scrollbar {
+    display: none; /* إخفاء شريط التمرير تمامًا */
+}
+
+.container{
    width: 100%;
    height: 100vh;
    background: #0000;
@@ -20,8 +31,8 @@
    height: 80vh;
    max-height: 500px;
    min-height: 400Px;
-   overflow: hidden;
-   overflow-y: auto;
+   overflow: hidden; /* إخفاء أشرطة التمرير الخاصة بالمدخلات */
+   overflow-y: auto; /* للحفاظ على التمرير العمودي إذا كان المحتوى أطول */
    flex-direction: column;
    justify-content: Center;
    justify-items: Center;
@@ -32,7 +43,16 @@
    top:50%;
    left:50%;
    transform:translate(-50%,-50%);
+   /* إخفاء شريط التمرير للمتصفحات المستندة على WebKit (مثل Chrome, Safari) */
+   -ms-overflow-style: none;  /* IE and Edge */
+   scrollbar-width: none;  /* Firefox */
  }
+
+/* إخفاء شريط التمرير للمتصفحات المستندة على WebKit (مثل Chrome, Safari) داخل .y */
+.y::-webkit-scrollbar {
+    display: none; /* إخفاء شريط التمرير تمامًا */
+}
+
  form{
    display: flex;
    flex-direction: column;
@@ -128,7 +148,3 @@ text-align:right;
  margin-bottom: 10px;
   float: right;
 }
-
-
-
-  
